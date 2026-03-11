@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	overflow-y: scroll;
+}
+
+* {
+	transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes slide-in {
+	from {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slide-out {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+}
+
+.animate-slide-in {
+	animation: slide-in 0.4s ease-out;
+}
+
+.animate-slide-out {
+	animation: slide-out 0.3s ease-in forwards;
+}
+
+@keyframes slide-up {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-slide-up {
+	animation: slide-up 0.7s ease-out both;
+}
+
+.animate-slide-up-delay-1 {
+	animation: slide-up 0.7s ease-out 0.15s both;
+}
+
+.animate-slide-up-delay-2 {
+	animation: slide-up 0.7s ease-out 0.3s both;
+}
+
+.animate-slide-up-delay-3 {
+	animation: slide-up 0.7s ease-out 0.45s both;
+}
+
+.animate-slide-up-delay-4 {
+	animation: slide-up 0.7s ease-out 0.6s both;
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.animate-fade-in {
+	animation: fade-in 0.5s ease-out both;
+}
+
+/* Scale in animation */
+@keyframes scale-in {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.animate-scale-in {
+	animation: scale-in 0.4s ease-out both;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+	0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.2); }
+	50% { box-shadow: 0 0 20px 4px rgba(59, 130, 246, 0.15); }
+}
+
+.animate-pulse-glow {
+	animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+	animation: float 4s ease-in-out infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+	0% { background-position: -200% 0; }
+	100% { background-position: 200% 0; }
+}
+
+.shimmer-bg {
+	background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+	background-size: 200% 100%;
+	animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Glass card utility */
+.glass-card {
+	@apply bg-white dark:bg-gray-800/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700/50 shadow-sm;
+}
+
+/* Gradient text utility */
+.gradient-text {
+	@apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-orange-500 to-blue-600 dark:from-blue-400 dark:via-orange-400 dark:to-blue-400;
+}
+
+/* Stat card hover */
+.stat-card {
+	@apply relative overflow-hidden transition-all duration-300;
+}
+
+.stat-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+}
+
+.dark .stat-card:hover {
+	box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* Progress bar animation */
+@keyframes progress-fill {
+	from { width: 0; }
+}
+
+.animate-progress {
+	animation: progress-fill 1.2s ease-out both;
+}
+
+/* Count up number animation */
+@keyframes count-pop {
+	0% { transform: scale(0.5); opacity: 0; }
+	70% { transform: scale(1.1); }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-count {
+	animation: count-pop 0.6s ease-out both;
+}
+
+/* Dark mode transition */
+html.dark {
+	color-scheme: dark;
+}
