@@ -127,18 +127,13 @@ src/
 ### 1. Clone and Install
 
 ```bash
-git clone <repository-url>
-cd sveltekit-auth-app
-npm install
-```
+git clone https://github.com/saadzahid-dot/Assignment-AuthApp.git
+
 
 ### 2. Environment Variables
 
-Create a `.env` file in the root:
-
-```env
-# Database
-DATABASE_URL="postgresql://user:password@localhost:5432/auth_app"
+Create a `.env` file in the root:git clone https://github.com/saadzahid-dot/Assignment-AuthApp.git
+_URL="postgresql://user:password@localhost:5432/auth_app"
 
 # Auth.js
 AUTH_SECRET="your-random-secret-key"
